@@ -7,17 +7,21 @@ import Actualites from 'src/containers/Actualites';
 import Vie from 'src/containers/Vie';
 import Contact from 'src/containers/Contact';
 import Home from 'src/containers/Home';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 
 // == Import
-import reactLogo from './react-logo.svg';
+import reactLogo from 'src/assets/image/tableaux/test.JPG';
 import './styles.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    {/* <Header /> */}
-    <img src={reactLogo} alt="react logo" />
-    <h1>Louis : App</h1>
+    <Header />
+    <div className="TEST">
+      <img src={reactLogo} alt="react logo" />
+      <h1>Louis : App</h1>
+    </div>
     <Switch>
       <Route path="/art">
         <Art />
@@ -35,7 +39,7 @@ const App = () => (
         <Home />
       </Route>
     </Switch>
-    {/* <Footer /> */}
+    <Footer />
   </div>
 );
 

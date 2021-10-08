@@ -1,0 +1,30 @@
+@use 'src/styles/vars.scss';
+
+#header {
+  background-color: rgb(255, 0, 255, 0.5);
+  width: 100%;  
+  position: fixed;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+
+  & nav {
+    display: flex;
+
+    & a {
+      margin-right: 1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:last-child {
+        margin: unset;
+      }
+    }
+  }
+
+  & .active {
+    text-transform: uppercase;
+  }
+}
