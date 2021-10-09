@@ -13,7 +13,7 @@
     width: 80px;
   }
 
-  & nav {
+  & .bigMenu {
     display: flex;
 
     & a {
@@ -40,33 +40,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.5rem;
 
     &:hover {
       background-color: blue;
     }
   }
   
-  & .hideMenu {
-    display: none;
-  }
-
   & .openMenu {
     display: inline-block;
     background-color: #0ff;
   }
 
 
-  @media (max-width: 500px) {
+  & .smallMenu {
+    position: fixed;
+    right: 0;
+    transition: 1.2s;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    & .scrollMenu {
+      margin: 1rem;
+    }
+  
+    & .active {
+      text-transform: uppercase;
+      right: 0;
+    }
+  }
+
+  & .hideMenu {
+    position: fixed;
+    right: -200px;
+    transition: 1.2s;
+  }
+
+  @media (max-width: 750px) {
     .bigMenu {
       display: none;
     }
   }
   
-  @media (min-width: 500px) {
+  @media (min-width: 750px) {
     .extendBar,
     .smallMenu {
       display: none;
+      margin-right: 1rem;
     }
+  }
+
+  & .hiddenBlur {
+    display: none;
+  }
+
+  & .blurArea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(56, 56, 56, 0.5);
   }
 }
 

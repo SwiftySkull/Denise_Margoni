@@ -11,7 +11,7 @@ import './styles.scss';
 // == Composant
 const Footer = () => (
   <div id="footer">
-    <div className="foot">
+    {/* <div className="foot">
       <p>2021 Catalogue Denise Margoni</p>
       <div className="logo">
         <img src={Facebook} alt="Facebook logo" />
@@ -20,12 +20,11 @@ const Footer = () => (
       </div>
       <div className="legals">
         <Link className="link" to="/newsletter">Newsletter</Link>
-        {/* <Link className="link" to="/cgu">Conditions Générales d'utilisation</Link> */}
         <Link className="link" to="/politique">Politique de confidentialité</Link>
         <Link className="link" to="/copyright">Copyright</Link>
         <Link className="link" to="/credits">Crédits</Link>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 
