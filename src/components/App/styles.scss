@@ -1,9 +1,9 @@
 @use 'src/styles/vars.scss';
 
-.app {
+#app {
   width: 100%;
   
-  & .TEST {
+  & #main {
     padding-top: 80px;
     text-align: center;
   }

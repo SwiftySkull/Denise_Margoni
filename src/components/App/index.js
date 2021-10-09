@@ -7,7 +7,7 @@ import Actualites from 'src/containers/Actualites';
 import Vie from 'src/containers/Vie';
 import Contact from 'src/containers/Contact';
 import Home from 'src/containers/Home';
-import Header from 'src/components/Header';
+import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
 
 // == Import
@@ -16,29 +16,29 @@ import './styles.scss';
 
 // == Composant
 const App = () => (
-  <div className="app">
+  <div id="app">
     <Header />
-    <div className="TEST">
+    <div id="main">
       <img src={reactLogo} alt="react logo" />
       <h1>Louis : App</h1>
+      <Switch>
+        <Route path="/art">
+          <Art />
+        </Route>
+        <Route path="/vie">
+          <Vie />
+        </Route>
+        <Route path="/actualite">
+          <Actualites />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
-    <Switch>
-      <Route path="/art">
-        <Art />
-      </Route>
-      <Route path="/vie">
-        <Vie />
-      </Route>
-      <Route path="/actualite">
-        <Actualites />
-      </Route>
-      <Route path="/contact">
-        <Contact />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Switch>
     <Footer />
   </div>
 );

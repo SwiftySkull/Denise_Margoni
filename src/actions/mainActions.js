@@ -1,16 +1,12 @@
 // ACTIONS TYPES
 
-// export const UPDATE_INPUT_VALUE = 'UPDATE_INPUT_VALUE';
+export const DISPLAY_MENU = 'DISPLAY_MENU';
 
 // ACTIONS CREATORS
 
 /**
- * Will update the value of a controlled field in the reducer
- * @param {*} value : Value received in the input
- * @param {*} fieldName : Name of the field listening to the entry
+ * Function to display/hide the side menu
  */
-// export const updateInputValue = (value, fieldName) => ({
-//   type: UPDATE_INPUT_VALUE,
-//   value,
-//   fieldName,
-// });
+export const displayMenu = () => ({
+  type: DISPLAY_MENU,
+});

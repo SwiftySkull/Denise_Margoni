@@ -8,6 +8,11 @@
   padding: 2rem;
   justify-content: space-between;
 
+  & h1 {
+    text-transform: uppercase;
+    width: 80px;
+  }
+
   & nav {
     display: flex;
 
@@ -22,9 +27,47 @@
         margin: unset;
       }
     }
+
+    & .active {
+      text-transform: uppercase;
+    }
   }
 
-  & .active {
-    text-transform: uppercase;
+  & .extendBar {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: blue;
+    }
+  }
+  
+  & .hideMenu {
+    display: none;
+  }
+
+  & .openMenu {
+    display: inline-block;
+    background-color: #0ff;
+  }
+
+
+  @media (max-width: 500px) {
+    .bigMenu {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 500px) {
+    .extendBar,
+    .smallMenu {
+      display: none;
+    }
   }
 }
+
+

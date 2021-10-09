@@ -1,12 +1,7 @@
-// import {
-//   DISPLAY_PROPOSITIONS,
-//   BENEFICIARY_RECONNECT,
-//   FIRST_BENEFICIARY_CONNECTION,
-//   REQUEST_UPDATED,
-// } from 'src/actions/beneficiaryActions';
+import { DISPLAY_MENU } from 'src/actions/mainActions';
 
 const initialState = {
-  loader: true,
+  menu: false,
 };
 
 /**
@@ -14,11 +9,11 @@ const initialState = {
  */
 function mainReducer(state = initialState, action) {
   switch (action.type) {
-    // case LOADER_ON:
-    //   return {
-    //     ...state,
-    //     loader: true,
-    //   };
+    case DISPLAY_MENU:
+      return {
+        ...state,
+        menu: !state.menu,
+      };
 
     default:
       return state;
