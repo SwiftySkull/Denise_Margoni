@@ -2,11 +2,14 @@ import { connect } from 'react-redux';
 
 import {
   updateField,
+} from 'src/actions/mainActions';
+
+import {
   submitContactRequest,
   submitValidation,
   closeRequest,
   requestModification,
-} from 'src/actions/mainActions';
+} from 'src/actions/contactActions';
 
 import Contact from 'src/components/Contact';
 
@@ -15,17 +18,17 @@ import Contact from 'src/components/Contact';
  */
 
 const mapStateToProps = (state) => ({
-  emailContact: state.main.emailContact,
-  nameContact: state.main.nameContact,
-  objectDemand: state.main.objectDemand,
-  contentDemand: state.main.contentDemand,
-  emailError: state.main.emailError,
-  nameError: state.main.nameError,
-  objectError: state.main.objectError,
-  contentError: state.main.contentError,
-  validationRequest: state.main.validationRequest,
-  requestSent: state.main.requestSent,
-  internalRequestError: state.main.internalRequestError,
+  emailContact: state.contact.emailContact,
+  nameContact: state.contact.nameContact,
+  objectDemand: state.contact.objectDemand,
+  contentDemand: state.contact.contentDemand,
+  emailError: state.contact.emailError,
+  nameError: state.contact.nameError,
+  objectError: state.contact.objectError,
+  contentError: state.contact.contentError,
+  validationRequest: state.contact.validationRequest,
+  requestSent: state.contact.requestSent,
+  internalRequestError: state.contact.internalRequestError,
 });
 
 /**

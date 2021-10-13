@@ -2,13 +2,16 @@
 import axios from 'axios';
 
 import {
+} from 'src/actions/mainActions';
+
+import {
   SUBMIT_CONTACT_REQUEST,
   errorSubmitRequestContact,
   validationOfTheRequest,
   SUBMIT_VALIDATION,
   requestSent,
   internalReceivedRequestError,
-} from 'src/actions/mainActions';
+} from 'src/actions/contactActions';
 
 import { validatorSubmitContactRequest } from 'src/utils/validator';
 // import {
@@ -31,7 +34,7 @@ const mainMiddleware = (store) => (next) => (action) => {
         nameContact,
         objectDemand,
         contentDemand,
-      } = state.main;
+      } = state.contact;
       console.log(emailContact, nameContact, objectDemand, contentDemand);
       const validation = validatorSubmitContactRequest(
         emailContact,
@@ -59,7 +62,7 @@ const mainMiddleware = (store) => (next) => (action) => {
         nameContact,
         objectDemand,
         contentDemand,
-      } = state.main;
+      } = state.contact;
       console.log(emailContact, nameContact, objectDemand, contentDemand);
       const validation = validatorSubmitContactRequest(
         emailContact,
