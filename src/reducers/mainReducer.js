@@ -1,14 +1,22 @@
 import {
   DISPLAY_MENU,
+  UPDATE_FIELD,
   OPEN_DETAILS,
   CHANGE_PAINTING_SIZE,
   PREVIOUS_TO_LIST,
+  SEARCH_PAINTINGS,
+  LOAD_PAINTING_LIST,
 } from 'src/actions/mainActions';
+
+import { paintingList } from 'src/data';
 
 const initialState = {
   menu: false,
   moreDetails: false,
   paintingSize: false,
+  typedSearch: '',
+  searchingPaintings: false,
+  paintingsList: paintingList,
 };
 
 /**
@@ -23,6 +31,12 @@ function mainReducer(state = initialState, action) {
       return {
         ...state,
         menu: !state.menu,
+      };
+
+    case UPDATE_FIELD:
+      return {
+        ...state,
+        typedSearch: action.inputName === 'typedSearch' ? action.value : state.typedSearch,
       };
 
     /**
@@ -50,6 +64,26 @@ function mainReducer(state = initialState, action) {
       return {
         ...state,
         moreDetails: false,
+      };
+
+    /**
+     * Start the painting research
+     */
+    case SEARCH_PAINTINGS:
+      return {
+        ...state,
+        searchingPaintings: !state.searchingPaintings,
+      };
+
+    /**
+     * WARNING !!!!!!!!!!!!
+     * This is replacable in the middleware to get the good list from the database
+     * Load all the paintings from the database
+     */
+    case LOAD_PAINTING_LIST:
+      return {
+        ...state,
+        paintingsList: action.paintingList,
       };
 
     default:

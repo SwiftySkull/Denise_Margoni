@@ -5,6 +5,9 @@ export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const OPEN_DETAILS = 'OPEN_DETAILS';
 export const CHANGE_PAINTING_SIZE = 'CHANGE_PAINTING_SIZE';
 export const PREVIOUS_TO_LIST = 'PREVIOUS_TO_LIST';
+export const SEARCH_PAINTINGS = 'SEARCH_PAINTINGS';
+export const LOAD_PAINTING_LIST = 'LOAD_PAINTING_LIST';
+export const LOADING_PAINTING_LIST = 'LOADING_PAINTING_LIST';
 
 // ACTIONS CREATORS
 
@@ -45,4 +48,20 @@ export const changePaintingSize = () => ({
  */
 export const previousToList = () => ({
   type: PREVIOUS_TO_LIST,
+});
+
+/**
+ * Start the painting research
+ */
+export const searchPaintings = () => ({
+  type: SEARCH_PAINTINGS,
+});
+
+export const loadPaintingList = (paintingList) => ({
+  type: LOAD_PAINTING_LIST,
+  paintingList,
+});
+
+export const loadingPaintingList = () => ({
+  type: LOADING_PAINTING_LIST,
 });

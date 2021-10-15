@@ -15,6 +15,7 @@ const UniqueArt = ({
   changePaintingSize,
   paintingSize,
   previousToList,
+  menu,
 }) => {
   const { paintingName } = useParams();
 
@@ -43,7 +44,7 @@ const UniqueArt = ({
         )}
       </div>
       <div
-        className="closePicture"
+        className={menu ? 'closePicture hideClose' : 'closePicture'}
         onClick={previousToList}
       ><p>+</p>
       </div>
@@ -63,6 +64,7 @@ UniqueArt.propTypes = {
   changePaintingSize: PropTypes.func.isRequired,
   paintingSize: PropTypes.bool.isRequired,
   previousToList: PropTypes.func.isRequired,
+  menu: PropTypes.bool.isRequired,
 };
 
 // == Export

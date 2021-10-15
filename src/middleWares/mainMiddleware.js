@@ -2,6 +2,8 @@
 import axios from 'axios';
 
 import {
+  LOADING_PAINTING_LIST,
+  loadPaintingList,
 } from 'src/actions/mainActions';
 
 import {
@@ -14,6 +16,8 @@ import {
 } from 'src/actions/contactActions';
 
 import { validatorSubmitContactRequest } from 'src/utils/validator';
+import { paintingList } from 'src/data';
+
 // import {
 //   API_LOAD_FILTERS,
 // } from 'src/actions/mainActions';
@@ -85,27 +89,19 @@ const mainMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    /**
-     * Action to get the departments and categories informations.
-     */
-    // case API_LOAD_FILTERS:
-    //   axios.get(`${URL}/categories`)
-    //     .then((response) => {
-    //       store.dispatch(displayFilters(response.data, 'categoriesFilter'));
-    //     })
-    //     .catch((error) => {
-    //       console.log('CATEGORY FILTER FROM API ERROR', error);
-    //     });
-    //   axios.get(`${URL}/departments`)
-    //     .then((response) => {
-    //       // console.log(response.data);
-    //       store.dispatch(displayFilters(response.data, 'locationFilter'));
-    //     })
-    //     .catch((error) => {
-    //       console.log('LOCATION FILTER FROM API ERROR', error);
-    //     });
-    //   next(action);
-    //   break;
+
+    case LOADING_PAINTING_LIST:
+      // axios.get()
+      // .then((response) => {
+      //  store.dispatch(loadPaintingList(response.LISTE_TABLEAUX));
+      // })
+      // .catch((error) => {
+      //
+      // });
+      console.log('chargement des peintures en cours');
+      store.dispatch(loadPaintingList(paintingList));
+      next(action);
+      break;
 
     // Default action.
     default:

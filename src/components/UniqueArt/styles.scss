@@ -80,6 +80,10 @@
     & p {
       transform: rotate(45deg);
     }
+
+    &.hideClose {
+      display: none;
+    }
   }
 
   & .smallPainting {

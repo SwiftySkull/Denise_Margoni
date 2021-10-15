@@ -11,6 +11,7 @@ import UniqueArt from 'src/components/UniqueArt';
 const mapStateToProps = (state) => ({
   moreDetails: state.main.moreDetails,
   paintingSize: state.main.paintingSize,
+  menu: state.main.menu,
 });
 
 /**
