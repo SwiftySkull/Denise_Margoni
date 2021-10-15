@@ -8,7 +8,9 @@ import Vie from 'src/containers/Vie';
 import Contact from 'src/containers/Contact';
 import Home from 'src/containers/Home';
 import Header from 'src/containers/Header';
+
 import Footer from 'src/components/Footer';
+import UniqueArt from 'src/components/UniqueArt';
 
 // == Import
 import reactLogo from 'src/assets/image/tableaux/test.JPG';
@@ -24,6 +26,9 @@ const App = () => (
       <Switch>
         <Route path="/art">
           <Art />
+        </Route>
+        <Route path="/painting/:paintingName">
+          <UniqueArt />
         </Route>
         <Route path="/vie">
           <Vie />
