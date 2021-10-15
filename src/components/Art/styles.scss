@@ -1,3 +1,21 @@
 @use 'src/styles/vars.scss';
 
+#art {
+  & .photosList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    & .vignette {
+      margin: 1rem;
+
+      @media (min-width: 750px) {
+        width: 45%;
+      }
+
+      @media (min-width: 1500px) {
+        width: 30%;
+      }
+    }
+  }
+}
