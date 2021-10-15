@@ -16,6 +16,9 @@ const mapStateToProps = (state) => ({
  * To dispatch function in the component
  */
 const mapDispatchToProps = (dispatch) => ({
+  /**
+   * Show/Hide the sidebar menu
+   */
   displayMenu: () => {
     dispatch(displayMenu());
   },

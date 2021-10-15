@@ -2,6 +2,7 @@ import {
   DISPLAY_MENU,
   OPEN_DETAILS,
   CHANGE_PAINTING_SIZE,
+  PREVIOUS_TO_LIST,
 } from 'src/actions/mainActions';
 
 const initialState = {
@@ -40,6 +41,15 @@ function mainReducer(state = initialState, action) {
       return {
         ...state,
         paintingSize: !state.paintingSize,
+      };
+
+    /**
+     * Close the "more details" area when closing the page of a painting
+     */
+    case PREVIOUS_TO_LIST:
+      return {
+        ...state,
+        moreDetails: false,
       };
 
     default:

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { openDetails, changePaintingSize } from 'src/actions/mainActions';
+import { openDetails, changePaintingSize, previousToList } from 'src/actions/mainActions';
 
 import UniqueArt from 'src/components/UniqueArt';
 
@@ -29,6 +29,14 @@ const mapDispatchToProps = (dispatch) => ({
    */
   changePaintingSize: () => {
     dispatch(changePaintingSize());
+  },
+
+  /**
+   * Send to the previous page of the list and close the "more details" area
+   */
+  previousToList: () => {
+    dispatch(previousToList());
+    window.history.back();
   },
 });
 
