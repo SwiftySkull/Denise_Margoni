@@ -8,12 +8,11 @@ import Vie from 'src/containers/Vie';
 import Contact from 'src/containers/Contact';
 import Home from 'src/containers/Home';
 import Header from 'src/containers/Header';
+import UniqueArt from 'src/containers/UniqueArt';
 
 import Footer from 'src/components/Footer';
-import UniqueArt from 'src/components/UniqueArt';
 
 // == Import
-import reactLogo from 'src/assets/image/tableaux/test.JPG';
 import './styles.scss';
 
 // == Composant
@@ -21,8 +20,6 @@ const App = () => (
   <div id="app">
     <Header />
     <div id="main">
-      <img src={reactLogo} alt="react logo" />
-      <h1>Louis : App</h1>
       <Switch>
         <Route path="/art">
           <Art />

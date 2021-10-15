@@ -4,8 +4,12 @@
   width: 100%;
   
   & #main {
-    padding-top: 100px;
+    padding-top: 62px;
     text-align: center;
+
+    @media (min-width: 750px) {
+      padding-top: 100px;
+    }
   }
 
   & img {
