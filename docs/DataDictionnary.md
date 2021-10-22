@@ -4,20 +4,19 @@
 | Field        | Type         | Specificity                                     | Description                                      |
 | ------------ | ------------ | ----------------------------------------------- | ------------------------------------------------ |
 | id           | INT          | PRIMARY KEY, NOT NULL, UNSIGNED, AUTO_INCREMENT | Identifiant de l'oeuvre                          |
-| titre        | VARCHAR (100)| NOT NULL                                        | Date de l'oeuvre                                 |
-| date         | DATETIME     | NULL                                            | Titre de l'oeuvre                                |
+| titre        | VARCHAR (100)| NOT NULL                                        | Titre de l'oeuvre                                |
+| date         | DATE         | NULL                                            | Date de l'oeuvre                                 |
 | hauteur      | TINYINT      | NULL                                            | Hauteur de l'oeuvre                              |
 | largeur      | TINYINT      | NULL                                            | Largeur de l'oeuvre                              |
 | lieu         | VARCHAR (100)| NULL                                            | Ville, région où se situe l'oeuvre actuellement  |
 | infos        | TEXT         | NULL                                            | Informations complémentaires sur l'oeuvre        |
 | photo        | TEXT         | NULL                                            | Photo de l'oeuvre                                |
-| created_at   | DATETIME     | NOT NULL, CURRENT_TIMESTAMP                     | Date d'enregistrement de l'oeuvre dans la BDD    |
+| created_at   | DATETIME     | NOT NULL, CURRENT_TIMESTAMP                     | Date d'enregistrement de l'oeuvre                |
 | updated_at   | DATETIME     | NULL                                            | Date de mise à jour de l'oeuvre                  |
-| taille       | entity       | NOT NULL                                        | Format de l'oeuvre                               |
-| technique    | entity       | NOT NULL                                        | Technique utilisée pour l'oeuvre                 |
-| categorie    | entity       | NOT NULL                                        | Catégories de l'oeuvre                           |
-| cadre        | entity       | NOT NULL                                        | Type d'encadrement de l'oeuvre                   |
-| vente        | entity       | NOT NULL                                        | Statut de vente de l'oeuvre et acheteur          |
+| taille_id    | entity       | NULL                                            | Format de l'oeuvre                               |
+| technique_id | entity       | NULL                                            | Technique utilisée pour l'oeuvre                 |
+| cadre_id     | entity       | NULL                                            | Type d'encadrement de l'oeuvre                   |
+| collection_id| entity       | NULL                                            | Situation de l'oeuvre, propriétaire actuel       |
 
 ## Taille
 | Field        | Type         | Specificity                                     | Description                                      |
@@ -39,7 +38,7 @@
 | Field        | Type         | Specificity                                     | Description                                      |
 | ------------ | ------------ | ----------------------------------------------- | ------------------------------------------------ |
 | id           | INT          | PRIMARY KEY, NOT NULL, UNSIGNED, AUTO_INCREMENT | Identifiant de la catégorie                      |
-| nom          | VARCHAR (100)| NOT NULL                                        | Nom du type de catégorie                         |
+| nom          | VARCHAR (100)| NOT NULL                                        | Nom de la catégorie                              |
 | created_at   | DATETIME     | NOT NULL, CURRENT_TIMESTAMP                     | Date d'enregistrement de la catégorie            |
 | updated_at   | DATETIME     | NULL                                            | Date de mise à jour de la catégorie              |
 
@@ -51,10 +50,16 @@
 | created_at   | DATETIME     | NOT NULL, CURRENT_TIMESTAMP                     | Date d'enregistrement de l'encadrement           |
 | updated_at   | DATETIME     | NULL                                            | Date de mise à jour de l'encadrement             |
 
-## Vente
+## Collection
 | Field        | Type         | Specificity                                     | Description                                      |
 | ------------ | ------------ | ----------------------------------------------- | ------------------------------------------------ |
 | id           | INT          | PRIMARY KEY, NOT NULL, UNSIGNED, AUTO_INCREMENT | Identifiant du statut de vente                   |
-| vendu        | VARCHAR (100)| NOT NULL                                        | Etat de la vente, propriétaire actuel            |
+| situation    | VARCHAR (100)| NOT NULL                                        | Situation de l'oeuvre, propriétaire actuel       |
 | created_at   | DATETIME     | NOT NULL, CURRENT_TIMESTAMP                     | Date d'enregistrement de la vente                |
 | updated_at   | DATETIME     | NULL                                            | Date de mise à jour de la vente                  |
+
+## Relation
+| Field        | Type         | Specificity                                     | Description                                      |
+| ------------ | ------------ | ----------------------------------------------- | ------------------------------------------------ |
+| peinture_id  | INT          | NOT NULL, UNSIGNED                              | Identifiant du statut de vente                   |
+| categorie_id | INT          | NOT NULL, UNSIGNED                              | Identifiant du statut de vente                   |
