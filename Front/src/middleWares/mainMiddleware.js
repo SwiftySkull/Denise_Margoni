@@ -23,7 +23,7 @@ import { paintingList } from 'src/data';
 // } from 'src/actions/mainActions';
 
 // URL for the Axios requests
-// const URL = 'http://54.156.70.255/apo-O-Solidaires-back/public';
+// const URL = 'http://localhost:8001/peintures';
 
 /**
  * MiddleWare for the main and authentification area.
@@ -33,6 +33,13 @@ const mainMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case SUBMIT_CONTACT_REQUEST: {
+      // axios.get(URL)
+      //   .then((response) => {
+      //     console.log(response);
+      //   })
+      //   .catch((error) => {
+      //   });
+
       const {
         emailContact,
         nameContact,
@@ -91,13 +98,6 @@ const mainMiddleware = (store) => (next) => (action) => {
     }
 
     case LOADING_PAINTING_LIST:
-      // axios.get()
-      // .then((response) => {
-      //  store.dispatch(loadPaintingList(response.LISTE_TABLEAUX));
-      // })
-      // .catch((error) => {
-      //
-      // });
       console.log('chargement des peintures en cours');
       store.dispatch(loadPaintingList(paintingList));
       next(action);
